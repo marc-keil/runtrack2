@@ -1,32 +1,27 @@
-
 <?php
+echo 'Nombre premier de 0 a 1000:';
 
-for ($a = 1; $a <= 1000; $a++)
-    $isPrime[$a] = true;
-
-// $isPrime[1] => True
-// $isPrime[2] => True
-// $isPrime[...] => True
-// $isPrime[1000] => True
+$i = 0;
 
 
-for ($a = 1; $a <= 1000; $a++) { // Tous les entrées dans $isPrime
 
-    if (!$isPrime[$a]){ // Si il est pas premier on continue au suivant
-        continue;
-    }
+while ($i <= 1000)
+{
+    $x = 1;
+    $y= 0;
 
-    echo $a . "<br>"; // On l'écrit si elle est prime
-
-    if($a != 1){ // Cas particulier du nombre premier 1
-
-        for($aRayer = 2*$a; $aRayer<=1000; $aRayer+=$a){ // On commence a a*2 et tant que a*n <= 1000
-            $isPrime[$aRayer] = false;
+    while ($x <= $i)
+    {   
+        if($i % $x == 0)
+        {
+        $y++;
         }
-
+        $x++;
     }
-    
+
+    if ($y == 2)
+    echo '<br>'.$i ;
+
+    $i++;
 }
-
-
 ?>
